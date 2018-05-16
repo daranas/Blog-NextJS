@@ -1,1 +1,1 @@
-# Building A Blog With Next.Js
+# Simple Blog with NextJS
