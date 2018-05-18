@@ -1,19 +1,15 @@
 import React from 'react'
-import Layout from 'layouts/main'
+import Layout from 'layouts/Main'
 import { getPosts } from 'api/posts'
-import { Link } from 'routes'
 
 import Post from 'components/Post'
 
-const IndexPage = ({ posts }) => (
+const IndexPage = ({ posts }) =>
   <Layout>
     <ul>
-      {posts.map(p => (
-        <Post key={p.title} post={p} />
-      ))}
+      {posts.map(p => <Post key={p.title} post={p} />)}
     </ul>
   </Layout>
-)
 
 IndexPage.getInitialProps = async ({ req }) => {
   const res = await getPosts()
@@ -21,4 +17,4 @@ IndexPage.getInitialProps = async ({ req }) => {
   return { posts: json }
 }
 
-export default IndexPage;
+export default IndexPage
